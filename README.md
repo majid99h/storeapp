@@ -1,27 +1,49 @@
-# Storeapp
+# 🛍️ StoreApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.1.
+An **Angular** storefront and admin panel for an e-commerce store. It uses the [StoreAPI](https://github.com/majid99h/storeapi) ASP.NET Core backend.
 
-## Development server
+![Angular](https://img.shields.io/badge/Angular-8-DD0031?logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-4-7952B3?logo=bootstrap&logoColor=white)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## ✨ Features
 
-## Code scaffolding
+### 🛒 Shop
+- Product browsing and shopping
+- Shopping cart
+- Order summary and order completion
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🔐 Auth
+- Login and registration
+- JWT added to API calls by an HTTP interceptor (`AuthInterceptor`)
+- Route protection with `AuthGuard` and a role-aware user menu
 
-## Build
+### 🧑‍💼 Admin
+- Product management
+- Product list
+- Order management
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## 🏗️ Project structure
 
-## Running unit tests
+```
+src/app/
+├── Admin/         → order, product, productlist components
+├── Shop/          → shopping, shoppingcart, ordersummary (feature module)
+├── Auth/          → auth module + route guard
+├── Shared/        → navbar, shared module
+├── appSerives/    → API services (auth, cart, category, order, product, user)
+├── helper/        → AuthInterceptor
+└── Model/         → Cart, Role, Shipment, User
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🚀 Getting started
 
-## Running end-to-end tests
+```bash
+npm install
+ng serve
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Open `http://localhost:4200/`. Set the API base URL in `src/app/AppSetting.ts` or `src/environments/`.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## 🔗 Related
+- Backend: [storeapi](https://github.com/majid99h/storeapi) (ASP.NET Core Web API)
